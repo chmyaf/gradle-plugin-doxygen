@@ -1,0 +1,13 @@
+# IDEs and text editors
+.idea/
+
+# VCS
+.hg/
+.hgignore
+.hgtags
+
+# Build tools
+.gradle/
+
+# Build and output data
+build/
