@@ -18,11 +18,13 @@ plugins {
     id "java"
     id "maven"
     id "maven-publish"
+    id "com.gradle.plugin-publish" version "0.10.1"
     id "com.jfrog.bintray" version "1.8.4"
 }
 
 group "com.chmyaf.gradle.plugin"
-version "1.0.3"
+version "1.0.4"
+def publicationVcsUrl = "https://github.com/chmyaf/gradle-plugin-doxygen.git"
 
 sourceCompatibility = 1.8
 
@@ -39,10 +41,10 @@ bintray {
             System.getenv("BINTRAY_PUBLISH_KEY")
     configurations = ['archives']
     pkg {
-        repo = "com.chmyaf.gradle.plugin"
+        repo = project.group
         name = "gradle-plugin-doxygen"
         licenses = ["Apache-2.0"]
-        vcsUrl = "https://github.com/chmyaf/gradle-plugin-doxygen.git"
+        vcsUrl = publicationVcsUrl
         version {
             name = project.version
             vcsTag = project.version
@@ -57,4 +59,18 @@ task sourcesJar(type: Jar, dependsOn: classes) {
 
 artifacts {
     archives sourcesJar
+}
+
+pluginBundle {
+    website = 'https://chmyaf.com'
+    vcsUrl = publicationVcsUrl
+    tags = ['doxygen']
+    description = 'Doxygen API documentation generator'
+
+    plugins {
+        gradlePluginDoxygen {
+            id = "${project.group}.${project.name}"
+            displayName = 'Generate source-code documentation with Doxygen'
+        }
+    }
 }

@@ -42,12 +42,15 @@ public class DoxygenPlugin implements Plugin<Project> {
         System.out.println(dpe.outputDirectory);
         dpe.projectName = project.getName();
 
-        mainSourceSet = project.getConvention().
-                getPlugin(JavaPluginConvention.class).
-                getSourceSets().
-                getByName("main");
-        for (File fl : mainSourceSet.getAllSource().getSrcDirs()) {
-            dpe.input.add(fl.getAbsolutePath());
+        try {
+            mainSourceSet = project.getConvention().
+                    getPlugin(JavaPluginConvention.class).
+                    getSourceSets().
+                    getByName("main");
+            for (File fl : mainSourceSet.getAllSource().getSrcDirs()) {
+                dpe.input.add(fl.getAbsolutePath());
+            }
+        } catch (Exception ignored) {
         }
 
         taskDoxygen = project.getTasks().create("doxygen", DoxygenTask.class);

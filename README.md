@@ -10,23 +10,26 @@ This plugin requires the Doxygen binary.
 
 ### Include plugin
 
-```build.gradle```:
+#### Using the pluginsDSL
+
+```groovy
+plugins {
+  id "com.chmyaf.gradle.plugin.doxygen" version "1.0.4"
+}
+```
+
+#### Using legacy plugin application
 
 ```groovy
 buildscript {
     repositories {
         jcenter()
-        ...
     }
     dependencies {
         classpath 'com.chmyaf.gradle.plugin:doxygen:+'
-        ...
     }
-    ...
 }
-...
 apply plugin: 'com.chmyaf.gradle.plugin.doxygen'
-...
 
 ```
 
