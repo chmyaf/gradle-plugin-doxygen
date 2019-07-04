@@ -22,7 +22,7 @@ plugins {
 }
 
 group "com.chmyaf.gradle.plugin"
-version "1.0.2"
+version "1.0.3"
 
 sourceCompatibility = 1.8
 
@@ -31,10 +31,10 @@ dependencies {
 }
 
 bintray {
-    user = project.hasProperty("bintray.publish.user1") ?
+    user = project.hasProperty("bintray.publish.user") ?
             project.getProperty("bintray.publish.user") :
             System.getenv("BINTRAY_PUBLISH_USER")
-    key = projects.hasProperty("bintray.publish.key") ?
+    key = project.hasProperty("bintray.publish.key") ?
             project.getProperty("bintray.publish.key") :
             System.getenv("BINTRAY_PUBLISH_KEY")
     configurations = ['archives']
