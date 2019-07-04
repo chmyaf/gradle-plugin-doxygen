@@ -6,6 +6,9 @@
 .hgignore
 .hgtags
 
+# Development-specific data
+RELEASE-NOTES.md
+
 # Build tools
 .gradle/
 

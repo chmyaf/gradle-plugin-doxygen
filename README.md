@@ -14,12 +14,20 @@ This plugin requires the Doxygen binary.
 
 ```groovy
 buildscript {
+    repositories {
+        jcenter()
+        ...
+    }
     dependencies {
         classpath 'com.chmyaf.gradle.plugin:doxygen:+'
+        ...
     }
+    ...
 }
-
+...
 apply plugin: 'com.chmyaf.gradle.plugin.doxygen'
+...
+
 ```
 
 ### Configuration
@@ -28,7 +36,7 @@ Configuration example:
 
 ```groovy
 doxygen {
-    bin = '/opt/tools/bin/doxygen'
+    bin = '/usr/bin/doxygen'
     quiet = false
 }
 ```

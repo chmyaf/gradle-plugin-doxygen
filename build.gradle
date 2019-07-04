@@ -15,12 +15,46 @@
  */
 
 plugins {
-    id 'java'
+    id "java"
+    id "maven"
+    id "maven-publish"
+    id "com.jfrog.bintray" version "1.8.4"
 }
 
 group "com.chmyaf.gradle.plugin"
-version "1.0.1"
+version "1.0.2"
+
+sourceCompatibility = 1.8
 
 dependencies {
     compile gradleApi()
+}
+
+bintray {
+    user = project.hasProperty("bintray.publish.user1") ?
+            project.getProperty("bintray.publish.user") :
+            System.getenv("BINTRAY_PUBLISH_USER")
+    key = projects.hasProperty("bintray.publish.key") ?
+            project.getProperty("bintray.publish.key") :
+            System.getenv("BINTRAY_PUBLISH_KEY")
+    configurations = ['archives']
+    pkg {
+        repo = "com.chmyaf.gradle.plugin"
+        name = "gradle-plugin-doxygen"
+        licenses = ["Apache-2.0"]
+        vcsUrl = "https://github.com/chmyaf/gradle-plugin-doxygen.git"
+        version {
+            name = project.version
+            vcsTag = project.version
+        }
+    }
+}
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    getArchiveClassifier().set("sources")
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives sourcesJar
 }
