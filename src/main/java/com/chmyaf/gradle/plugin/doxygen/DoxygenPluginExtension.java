@@ -27,6 +27,7 @@ public class DoxygenPluginExtension {
     public String outputDirectory = "";
     public String projectName = "";
     public String projectNumber = "";
+    public boolean recursive = true;
     public boolean quiet = true;
     public boolean warnNoParamDoc = true;
 }

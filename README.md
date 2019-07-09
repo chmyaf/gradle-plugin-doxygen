@@ -14,7 +14,7 @@ This plugin requires the Doxygen binary.
 
 ```groovy
 plugins {
-  id "com.chmyaf.gradle.plugin.doxygen" version "1.0.4"
+  id "com.chmyaf.gradle.plugin.doxygen" version "X.Y.Z"
 }
 ```
 
@@ -61,6 +61,7 @@ doxygen {
 |outputDirectory|String|OUTPUT_DIRECTORY|```build/docs/doxygen```|
 |projectName|String|PROJECT_NAME|```${project.name}```|
 |projectNumber|String|PROJECT_NUMBER|```${project.version}```|
+|recursive|boolean|RECURSIVE|```true```|
 |quiet|boolean|QUIET|```true```|
 |warnNoParamDoc|boolean|WARN_NO_PARAMDOC|```true```|
 
