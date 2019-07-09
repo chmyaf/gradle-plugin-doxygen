@@ -24,7 +24,7 @@ plugins {
 }
 
 group "com.chmyaf.gradle.plugin"
-version "1.1.0"
+version "1.1.1"
 def publicationVcsUrl = "https://github.com/chmyaf/gradle-plugin-doxygen.git"
 
 sourceCompatibility = 1.8

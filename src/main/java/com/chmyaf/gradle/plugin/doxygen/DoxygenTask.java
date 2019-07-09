@@ -91,7 +91,7 @@ public class DoxygenTask extends DefaultTask {
         this.params.put("OUTPUT_DIRECTORY", this.getDPE().outputDirectory);
         this.params.put("PROJECT_NAME", this.getProjectName());
         this.params.put("PROJECT_NUMBER", this.getProjectNumber());
-        this.params.put("recursive", this.getDPE().recursive ? "YES" : "NO");
+        this.params.put("RECURSIVE", this.getDPE().recursive ? "YES" : "NO");
         this.params.put("QUIET", this.getDPE().quiet ? "YES" : "NO");
         this.params.put("WARN_NO_PARAMDOC",
                 this.getDPE().warnNoParamDoc ? "YES" : "NO"
