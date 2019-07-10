@@ -56,13 +56,19 @@ doxygen {
 
 |Option|Type|Doxyfile parameter|Default value|
 |------|----|------------------|-------------|
+|extractAnonMethods|boolean|EXTRACT_ANON_METHODS|```true```|
+|extractLocalClasses|boolean|EXTRACT_LOCAL_CLASSES|```true```|
+|extractLocalMethods|boolean|EXTRACT_LOCAL_METHODS|```true```|
+|extractPackage|boolean|EXTRACT_PACKAGE|```true```|
+|extractPrivate|boolean|EXTRACT_PRIVATE|```true```|
+|extractStatic|boolean|EXTRACT_STATIC|```true```|
 |generateLatex|boolean|GENERATE_LATEX|```false```|
 |input|ArrayList<String>|INPUT|```${sourceSets.main.allSource.srcDirs}```|
 |outputDirectory|String|OUTPUT_DIRECTORY|```build/docs/doxygen```|
 |projectName|String|PROJECT_NAME|```${project.name}```|
 |projectNumber|String|PROJECT_NUMBER|```${project.version}```|
-|recursive|boolean|RECURSIVE|```true```|
 |quiet|boolean|QUIET|```true```|
+|recursive|boolean|RECURSIVE|```true```|
 |warnNoParamDoc|boolean|WARN_NO_PARAMDOC|```true```|
 
 #### Other parameters

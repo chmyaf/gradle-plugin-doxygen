@@ -23,7 +23,15 @@ import org.gradle.api.tasks.SourceSet;
 
 import java.io.File;
 
+/**
+ * The Doxygen plugin.
+ */
 public class DoxygenPlugin implements Plugin<Project> {
+    /**
+     * Apply plugin method for the Gradle.
+     *
+     * @param project Project parameters from the Gradle.
+     */
     @Override
     public void apply(Project project) {
         DoxygenPluginExtension dpe;

@@ -18,16 +18,44 @@ package com.chmyaf.gradle.plugin.doxygen;
 
 import java.util.ArrayList;
 
+/**
+ * \brief Doxygen plugin parameters.
+ *
+ * Plugin options and doxygen settings.
+ */
 public class DoxygenPluginExtension {
+    /// Path to the Doxygen binary.
     public String bin = "";
-    public boolean generateLatex = false;
+    /// Path to custom Doxyfile.
     public String doxyfile = "";
+    /// Path to generated Doxyfile.
     public String doxyfileDefault = "";
+    /// Doxyfile: EXTRACT_ANON_METHODS.
+    public boolean extractAnonMethods = true;
+    /// Doxyfile: EXTRACT_LOCAL_CLASSES.
+    public boolean extractLocalClasses = true;
+    /// Doxyfile: EXTRACT_LOCAL_METHODS.
+    public boolean extractLocalMethods = true;
+    /// Doxyfile: EXTRACT_PACKAGE.
+    public boolean extractPackage = true;
+    /// Doxyfile: EXTRACT_PRIVATE.
+    public boolean extractPrivate = true;
+    /// Doxyfile: EXTRACT_STATIC.
+    public boolean extractStatic = true;
+    /// Doxyfile: GENERATE_LATEX.
+    public boolean generateLatex = false;
+    /// Doxyfile: INPUT
     public ArrayList<String> input = new ArrayList<>();
+    /// Doxyfile: OUTPUT_DIRECTORY
     public String outputDirectory = "";
+    /// Doxyfile: PROJECT_NAME.
     public String projectName = "";
+    /// Doxyfile: PROJECT_NUMBER.
     public String projectNumber = "";
+    /// Doxyfile: RECURSIVE.
     public boolean recursive = true;
+    /// Doxyfile: QUIET.
     public boolean quiet = true;
+    /// Doxyfile: WARN_NO_PARAMDOC.
     public boolean warnNoParamDoc = true;
 }

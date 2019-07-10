@@ -30,6 +30,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Task doxygen.
+ *
+ * The "doxygen" task for plugin.
+ */
 public class DoxygenTask extends DefaultTask {
     private DoxygenPluginExtension dpe;
     private HashMap<String, String> params = new HashMap<>();
@@ -39,6 +44,9 @@ public class DoxygenTask extends DefaultTask {
                 findByType(DoxygenPluginExtension.class);
     }
 
+    /**
+     * Main task method.
+     */
     @TaskAction
     public void apply() {
         boolean isChangedConfiguration = false;
@@ -85,6 +93,24 @@ public class DoxygenTask extends DefaultTask {
         }
         input.append(System.lineSeparator());
         this.params.put("INPUT", input.toString());
+        this.params.put("EXTRACT_ANON_METHODS",
+                this.getDPE().extractAnonMethods ? "YES" : "NO"
+        );
+        this.params.put("EXTRACT_LOCAL_CLASSES",
+                this.getDPE().extractLocalClasses ? "YES" : "NO"
+        );
+        this.params.put("EXTRACT_LOCAL_METHODS",
+                this.getDPE().extractLocalMethods ? "YES" : "NO"
+        );
+        this.params.put("EXTRACT_PACKAGE",
+                this.getDPE().extractPackage ? "YES" : "NO"
+        );
+        this.params.put("EXTRACT_PRIVATE",
+                this.getDPE().extractPrivate ? "YES" : "NO"
+        );
+        this.params.put("EXTRACT_STATIC",
+                this.getDPE().extractStatic ? "YES" : "NO"
+        );
         this.params.put("GENERATE_LATEX",
                 this.getDPE().generateLatex ? "YES" : "NO"
         );
