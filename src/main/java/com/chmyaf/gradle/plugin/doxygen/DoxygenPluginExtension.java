@@ -46,6 +46,8 @@ public class DoxygenPluginExtension {
     public boolean generateLatex = false;
     /// Doxyfile: INPUT
     public ArrayList<String> input = new ArrayList<>();
+    /// Doxyfile: JAVADOC_AUTOBRIEF.
+    public boolean javadocAutobrief = false;
     /// Doxyfile: OUTPUT_DIRECTORY
     public String outputDirectory = "";
     /// Doxyfile: PROJECT_NAME.

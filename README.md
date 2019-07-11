@@ -64,6 +64,7 @@ doxygen {
 |extractStatic|boolean|EXTRACT_STATIC|```true```|
 |generateLatex|boolean|GENERATE_LATEX|```false```|
 |input|ArrayList<String>|INPUT|```${sourceSets.main.allSource.srcDirs}```|
+|javadocAutobrief|boolean|JAVADOC_AUTOBRIEF|```true```|
 |outputDirectory|String|OUTPUT_DIRECTORY|```build/docs/doxygen```|
 |projectName|String|PROJECT_NAME|```${project.name}```|
 |projectNumber|String|PROJECT_NUMBER|```${project.version}```|
